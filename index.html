@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Personal Task Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<main class="app">
+  <section class="app-card">
+    <header class="app-header">
+      <div class="app-header-row">
+        <div>
+          <h1>Personal Task Tracker</h1>
+          <p id="task-summary" class="task-summary-text">0 tasks, 0 completed</p>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme">Light / Dark</button>
+      </div>
+    </header>
+
+    <section class="input-card" aria-label="Add a new task">
+      <form id="task-form" class="task-form" autocomplete="off">
+        <div class="field-group">
+          <label for="title">Task title *</label>
+          <input id="title" type="text" placeholder="e.g. Review project plan" required />
+          <small id="title-error" class="error-message"></small>
+        </div>
+        <div class="field-group">
+          <label for="description">Description (optional)</label>
+          <textarea id="description" rows="2" placeholder="Add a short note or leave empty"></textarea>
+        </div>
+        <button class="primary-btn" type="submit">Add task</button>
+      </form>
+    </section>
+
+    <section class="filters-row" aria-label="Task filters">
+      <span class="filters-label">Filter</span>
+      <div class="filters">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="active">Active</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+    </section>
+
+    <section class="list-section" aria-label="Task list">
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-state" class="empty-state">No tasks yet. Add your first one above.</p>
+    </section>
+  </section>
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
